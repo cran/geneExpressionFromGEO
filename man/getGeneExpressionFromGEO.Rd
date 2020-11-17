@@ -2,19 +2,12 @@
 % Please edit documentation in R/geneExpressionFromGEO.r
 \name{getGeneExpressionFromGEO}
 \alias{getGeneExpressionFromGEO}
-\title{Function that reads in the GEO code and the platform ID of a dataset, and returns the gene expression dataframe.}
+\title{Function that reads in the GEO code of a dataset, and returns the gene expression dataframe.}
 \usage{
-getGeneExpressionFromGEO(
-  datasetGeoCode,
-  datasetPlatform,
-  retrieveGeneSymbols,
-  verbose = FALSE
-)
+getGeneExpressionFromGEO(datasetGeoCode, retrieveGeneSymbols, verbose = FALSE)
 }
 \arguments{
 \item{datasetGeoCode}{the GEO code of a dataset.}
-
-\item{datasetPlatform}{the ID of the platform of the dataset.}
 
 \item{retrieveGeneSymbols}{a boolean flag stating if the function should retrieve the gene symbols or not.}
 
@@ -24,8 +17,8 @@ getGeneExpressionFromGEO(
 a gene expression dataset.
 }
 \description{
-Function that reads in the GEO code and the platform ID of a dataset, and returns the gene expression dataframe.
+Function that reads in the GEO code of a dataset, and returns the gene expression dataframe.
 }
 \examples{
-geneExpressionDF1 <- getGeneExpressionFromGEO("GSE3268", "GPL96", FALSE, FALSE)
+geneExpressionDF1 <- getGeneExpressionFromGEO("GSE3268", FALSE, FALSE)
 }
