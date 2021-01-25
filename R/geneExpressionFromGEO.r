@@ -12,6 +12,17 @@ getGeneExpressionFromGEO <- function(datasetGeoCode, retrieveGeneSymbols, verbos
 {
 
             GSE_code <- datasetGeoCode
+            
+            # check   URL
+            checked_html_text <- "EMPTY_STRING"
+            checked_html_text <- xml2::read_html("https://ftp.ncbi.nlm.nih.gov/geo/series/")
+            
+            if(all(checked_html_text == "EMPTY_STRING")) {
+         
+                    cat("The web url https://ftp.ncbi.nlm.nih.gov/geo/series/ is unavailable right now. Please try again later. The function will stop here\n")
+                    return(NULL)
+         
+            } else {
 
             gset <- GEOquery::getGEO(GSE_code,  GSEMatrix =TRUE, getGPL=FALSE)
             
@@ -125,5 +136,5 @@ getGeneExpressionFromGEO <- function(datasetGeoCode, retrieveGeneSymbols, verbos
             }
             
             return(gene_expression)
-
+        }
 }   

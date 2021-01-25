@@ -1,8 +1,8 @@
-d2def2057ab896f0d8473136f042a97c *DESCRIPTION
+a1dd9fb8d06873b40e4af590f5017adc *DESCRIPTION
 3c820f9df1c38779b5025f1e4f0169be *NAMESPACE
 52cff38bc040371cf1ed98222c9ac153 *R/dec_two.r
-e83f07022b567fbb4f0bf5cf47b5310c *R/geneExpressionFromGEO.r
-3549b6c9a78c33aaab558146ff167199 *build/vignette.rds
+1edc059da680cc47eeb79e85f14a42f4 *R/geneExpressionFromGEO.r
+cb80fcac3cb3d068e2178312e490990e *build/vignette.rds
 3822f3d35c51a3e6eb6e3f482d53b599 *inst/doc/geneExpressionFromGEOvignette.R
 c0eda2b28fdab931ca8b576ad8a3f1e7 *inst/doc/geneExpressionFromGEOvignette.Rmd
 ff3d0f0d91e3fa1e171ec9d9288c417e *inst/doc/geneExpressionFromGEOvignette.html
