@@ -1,5 +1,6 @@
 
-#' Function that reads in a URL to check and verifies if it exists (function taken from https://stackoverflow.com/a/12195574 )
+
+#' Function that reads in a URL to check and verifies if it exists (function written by Janko Thyson @rappster and taken from https://stackoverflow.com/a/12195574 )
 #' 
 #' @param url the URL of a webpage
 #' @return the output of a webpage verification check
@@ -81,7 +82,7 @@ getGeneExpressionFromGEO <- function(datasetGeoCode, retrieveGeneSymbols, verbos
                     
             } else if(all(checked_html_text_url == "EMPTY_STRING" | is.null(checked_html_text_url[[1]]) )) {
          
-                    cat("The web url ", complete_url," is unavailable right now. Please try again later. The function will stop here\n")
+                    cat("The web url ", complete_url," is unavailable right now (Error 404 webpage not found). The GEO code might be wrong. The function will stop here\n", sep="")
                     return(NULL)        
                     
             } else {
