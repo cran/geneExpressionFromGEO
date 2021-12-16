@@ -144,16 +144,16 @@ getGeneExpressionFromGEO <- function(datasetGeoCode, retrieveGeneSymbols, verbos
                         # we start from 2 because 1 is the label
                         for(k in FIRST_GENE_EXPRESSION_INDEX:nrow(gene_expression)) {
 
-                        currentCompletionPerc <- k*100 / nrow(gene_expression)
-                        kForPrint <- 1000
-                        if (verbose == TRUE) if ((k %% kForPrint)==0) { cat(dec_two(currentCompletionPerc), "% ", sep="") }
+                            currentCompletionPerc <- k*100 / nrow(gene_expression)
+                            kForPrint <- 1000
+                            if (verbose == TRUE) if ((k %% kForPrint)==0) { cat(dec_two(currentCompletionPerc), "% ", sep="") }
 
-                        if(thisGEOplatform %in% platformsWithGeneSpaceSymbolField) thisSymbol <- platform_ann_df[platform_ann_df$ID==rownames(gene_expression[k,]),]$"Gene Symbol"
-                        if(thisGEOplatform %in% platformsWithGene_SymbolField) thisSymbol <- platform_ann_df[platform_ann_df$ID==rownames(gene_expression[k,]),]$"gene_symbol"
-                        if(thisGEOplatform %in% platformsWithSymbolField) thisSymbol <- platform_ann_df[platform_ann_df$ID==rownames(gene_expression[k,]),]$"symbol"
-                        if(thisGEOplatform %in% platformsWith_GENE_SYMBOL_Field) thisSymbol <- platform_ann_df[platform_ann_df$ID==rownames(gene_expression[k,]),]$"GENE_SYMBOL"
-                        
-                        gene_expression[k,]$GeneSymbol <- thisSymbol
+                            if(thisGEOplatform %in% platformsWithGeneSpaceSymbolField) thisSymbol <- platform_ann_df[platform_ann_df$ID==rownames(gene_expression[k,]),]$"Gene Symbol"
+                            if(thisGEOplatform %in% platformsWithGene_SymbolField) thisSymbol <- platform_ann_df[platform_ann_df$ID==rownames(gene_expression[k,]),]$"gene_symbol"
+                            if(thisGEOplatform %in% platformsWithSymbolField) thisSymbol <- platform_ann_df[platform_ann_df$ID==rownames(gene_expression[k,]),]$"symbol"
+                            if(thisGEOplatform %in% platformsWith_GENE_SYMBOL_Field) thisSymbol <- platform_ann_df[platform_ann_df$ID==rownames(gene_expression[k,]),]$"GENE_SYMBOL"
+                            
+                            gene_expression[k,]$GeneSymbol <- thisSymbol
                         
                         }
                         if (verbose == TRUE) cat("\n [end] loop for the association of the gene symbols to the probeset ID's \n ", sep="")
