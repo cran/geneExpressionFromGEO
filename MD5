@@ -1,11 +1,11 @@
-cb05d7160c4bf200f73a3929353cbe33 *DESCRIPTION
+18f542ad496e57800be4ff174d7a2de6 *DESCRIPTION
 3c820f9df1c38779b5025f1e4f0169be *NAMESPACE
-55ace2a0c3898bd77472f3c1ab8f5082 *R/geneExpressionFromGEO.r
-25797f79c510a9b266215c82a720c945 *build/vignette.rds
-3822f3d35c51a3e6eb6e3f482d53b599 *inst/doc/geneExpressionFromGEOvignette.R
+fff94740fcf0db1b111d2648ab59aca0 *R/geneExpressionFromGEO.r
+95a1893f066079d4e101c4560ec2271d *build/vignette.rds
+f9baab4e678e94edf3f7ebdb78d31c5e *inst/doc/geneExpressionFromGEOvignette.R
 c0eda2b28fdab931ca8b576ad8a3f1e7 *inst/doc/geneExpressionFromGEOvignette.Rmd
-b42169625db55fa6d0144826159f8ed7 *inst/doc/geneExpressionFromGEOvignette.html
+8141d182f49a52bfb214ff5f5be57fda *inst/doc/geneExpressionFromGEOvignette.html
 0286006f8b539e7c5d16ece513312d88 *man/dec_two.Rd
-13081a40843ec694a6e243ff3e9600c9 *man/getGeneExpressionFromGEO.Rd
+a16cdfcf3423c1076042b762ab5c9f4e *man/getGeneExpressionFromGEO.Rd
 319ce17f7cbafcddffc0e6f573bd05ef *man/readUrl.Rd
 c0eda2b28fdab931ca8b576ad8a3f1e7 *vignettes/geneExpressionFromGEOvignette.Rmd

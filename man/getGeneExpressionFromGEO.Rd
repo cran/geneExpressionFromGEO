@@ -20,5 +20,5 @@ a gene expression dataset.
 Function that reads in the GEO code of a dataset, and returns the gene expression dataframe.
 }
 \examples{
-geneExpressionDF1 <- getGeneExpressionFromGEO("GSE3268", FALSE, FALSE)
+geneExpressionDF1 <- getGeneExpressionFromGEO("GSE47018", FALSE, FALSE)
 }

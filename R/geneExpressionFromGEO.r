@@ -66,7 +66,7 @@ readUrl <- function(url) {
 #' @param verbose a boolean flag stating if helping messages should be printed or not
 #' @return a gene expression dataset.
 #' @examples
-#' geneExpressionDF1 <- getGeneExpressionFromGEO("GSE3268", FALSE, FALSE)
+#' geneExpressionDF1 <- getGeneExpressionFromGEO("GSE47018", FALSE, FALSE)
 getGeneExpressionFromGEO <- function(datasetGeoCode, retrieveGeneSymbols, verbose = FALSE) 
 {
 
@@ -74,6 +74,15 @@ getGeneExpressionFromGEO <- function(datasetGeoCode, retrieveGeneSymbols, verbos
             
             # check   URL
             checked_html_text <- "EMPTY_STRING"
+            checked_html_text_var <- readUrl("https://ftp.ncbi.nlm.nih.gov/geo/series/")
+
+            if(all(checked_html_text_var == "EMPTY_STRING" | is.null(checked_html_text_var[[1]]) )) {
+
+                    cat("The web url https://ftp.ncbi.nlm.nih.gov/geo/series/ is unavailable right now (Error 404 webpage not found). The GEO code might be wrong. The function will stop here\n", sep="")
+                    return(NULL)
+
+            }
+
             checked_html_text <- xml2::read_html("https://ftp.ncbi.nlm.nih.gov/geo/series/")
             
             checked_html_text_url <- "EMPTY_STRING"
@@ -82,9 +91,10 @@ getGeneExpressionFromGEO <- function(datasetGeoCode, retrieveGeneSymbols, verbos
             GSE_code_for_url <- substr(GSE_code_for_url,1,nchar(GSE_code_for_url)-3)
             GSE_code_for_url <- paste0(GSE_code_for_url, "nnn")
             complete_url <- paste0("https://ftp.ncbi.nlm.nih.gov/geo/series/", GSE_code_for_url, "/", GSE_code)
-           
-           checked_html_text_url <- lapply(complete_url, readUrl)
-#             
+
+           # checked_html_text_url <- lapply(complete_url, readUrl)
+           checked_html_text_url <- readUrl(complete_url)
+
             if(all(checked_html_text == "EMPTY_STRING")) {
          
                     cat("The web url https://ftp.ncbi.nlm.nih.gov/geo/series/ is unavailable right now. Please try again later. The function will stop here\n")
